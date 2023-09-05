@@ -15,7 +15,7 @@ function getDrink(){
 })
 
 .then(err =>{
-    console.log(`error ${err} or it is creating an error`)
+    console.log(`error ${err}`)
 })
 
 }

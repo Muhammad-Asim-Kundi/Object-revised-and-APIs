@@ -2,19 +2,18 @@
 document.querySelector('button').addEventListener('click',picOfDay)
 
 function picOfDay(){
-    let nasa = Number(document.querySelector('input').value)
+    let date = Number(document.querySelector('input').value)
 
-    fetch(`https://api.nasa.gov/planetary/apod?api_key= nasa`)
+    fetch(`https://api.nasa.gov/planetary/apod?date = ${date}`)
     .then(res => res.json())
     .then(data =>{
-        console.log(data.nasa)
-        document.querySelector('h2').innerText = data.nasa
+        console.log(data.date)
+        document.querySelector('h2').innerText = data.date
 
-        document.querySelector('img').src = data.url
+        // document.querySelector('img').src = data.url
     })
     .then(err =>{
         console.log(`error ${err}`)
     })
 
 }
-//2023-03-04
